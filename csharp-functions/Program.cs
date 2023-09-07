@@ -74,6 +74,27 @@ int[] riempiArray(int lunghezza)
     return arrayUtente;
 }
 
+// Una funzione che, dato un numero intero n > 0, ne calcoli il fattoriale
+
+int Fattoriale(int numero)
+{
+    if(numero > 0)
+    {
+        int fattoriale = 1;
+        for(int i = 1; i <= numero; i++)
+        {
+            fattoriale *= i;
+        }
+        return fattoriale;
+    }
+    else
+    {
+        return 1;
+    }
+}
+
+
+/*
 // MAIN
 
 int[] arrayBase = { 2, 6, 7, 5, 3, 9 };
@@ -112,6 +133,20 @@ int sommaArrayUtenteElevato = SommaElementiArray(arrayUtenteElevatoQuadrato);
 
 Console.WriteLine($"{sommaArrayUtente} è la somma degli elementi dell'array di partenza");
 Console.WriteLine($"{sommaArrayUtenteElevato} è la somma degli elementi dell'array elevato al quadrato");
+
+*/
+
+// SBIZZARRIMENTO
+
+Console.WriteLine("\n---------------------------\n");
+
+Console.Write("Inserire un numero del quale verra calcolato il fattoriale, inserire un numero positivo: ");
+int numeroFattoriale = int.Parse(Console.ReadLine());
+
+int fattoriale = Fattoriale(numeroFattoriale);
+
+Console.WriteLine($"Il Fattoriale di {numeroFattoriale} è: {fattoriale}");
+
 
 
 
