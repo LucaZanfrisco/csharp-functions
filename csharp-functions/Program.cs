@@ -58,6 +58,21 @@ int SommaElementiArray(int[] array)
     return sommaElementiArray;
 }
 
+/*
+ * Dato un numero inserito dall'utente, riempire un array da input
+*/
+
+int[] riempiArray(int lunghezza)
+{
+    int[] arrayUtente = new int[lunghezza];
+
+    for(int i = 0; i < arrayUtente.Length; i++)
+    {
+        Console.Write($"Inserire il {i + 1} numero: ");
+        arrayUtente[i] = int.Parse(Console.ReadLine());
+    }
+    return arrayUtente;
+}
 
 // MAIN
 
@@ -74,4 +89,29 @@ int sommaArrayBase = SommaElementiArray(arrayBase);
 int sommaArrayElevato = SommaElementiArray(arrayElevatoQuadrato);
 
 Console.WriteLine($"{sommaArrayBase} è la somma degli elementi dell'array di partenza");
-Console.WriteLine($"{sommaArrayElevato} è la somma degli elementi dell'array elevato al quadrato");
+Console.WriteLine($"{sommaArrayElevato} è la somma degli elementi dell'array elevato al quadrato ");
+
+Console.WriteLine("\n --------------------------------------- \n");
+
+// MAIN BONUS
+
+Console.Write("Inserire la quantità di numeri che si vogliono inserire: ");
+int lunghezzaArray = int.Parse(Console.ReadLine());
+
+int[] arrayUtente = riempiArray(lunghezzaArray);
+
+StampaArray(arrayUtente);
+
+int[] arrayUtenteElevatoQuadrato = ElevaArrayAlQuadrato(arrayUtente);
+
+StampaArray(arrayUtenteElevatoQuadrato);
+StampaArray(arrayUtente);
+
+int sommaArrayUtente = SommaElementiArray(arrayUtente);
+int sommaArrayUtenteElevato = SommaElementiArray(arrayUtenteElevatoQuadrato);
+
+Console.WriteLine($"{sommaArrayUtente} è la somma degli elementi dell'array di partenza");
+Console.WriteLine($"{sommaArrayUtenteElevato} è la somma degli elementi dell'array elevato al quadrato");
+
+
+
