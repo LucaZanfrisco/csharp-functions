@@ -57,3 +57,21 @@ int SommaElementiArray(int[] array)
     }
     return sommaElementiArray;
 }
+
+
+// MAIN
+
+int[] arrayBase = { 2, 6, 7, 5, 3, 9 };
+
+StampaArray(arrayBase);
+
+int[] arrayElevatoQuadrato = ElevaArrayAlQuadrato(arrayBase);
+
+StampaArray(arrayElevatoQuadrato);
+StampaArray(arrayBase);
+
+int sommaArrayBase = SommaElementiArray(arrayBase);
+int sommaArrayElevato = SommaElementiArray(arrayElevatoQuadrato);
+
+Console.WriteLine($"{sommaArrayBase} è la somma degli elementi dell'array di partenza");
+Console.WriteLine($"{sommaArrayElevato} è la somma degli elementi dell'array elevato al quadrato");
