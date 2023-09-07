@@ -93,8 +93,32 @@ int Fattoriale(int numero)
     }
 }
 
+//  Una funzione che, dato un numero intero n >= 0, restituisca l'n-esimo elemento della sequenza di Fibonacci.
 
-/*
+int Fibonacci(int numero)
+{
+    if(numero == 0)
+    {
+        return 0;
+    }else if( numero == 1)
+    {
+        return 1;
+    }else
+    {
+        int fibonacci = 2;
+        int somma = 1;
+        int fibonacciPrec = 0;
+        for(int i = 0;i < numero;i++)
+        {
+            fibonacciPrec = fibonacci;
+            fibonacci += somma;
+            somma = fibonacciPrec;
+        }
+        return fibonacci;
+    }
+}
+
+
 // MAIN
 
 int[] arrayBase = { 2, 6, 7, 5, 3, 9 };
@@ -134,10 +158,10 @@ int sommaArrayUtenteElevato = SommaElementiArray(arrayUtenteElevatoQuadrato);
 Console.WriteLine($"{sommaArrayUtente} è la somma degli elementi dell'array di partenza");
 Console.WriteLine($"{sommaArrayUtenteElevato} è la somma degli elementi dell'array elevato al quadrato");
 
-*/
 
 // SBIZZARRIMENTO
 
+// FATTORIALE
 Console.WriteLine("\n---------------------------\n");
 
 Console.Write("Inserire un numero del quale verra calcolato il fattoriale, inserire un numero positivo: ");
@@ -146,6 +170,18 @@ int numeroFattoriale = int.Parse(Console.ReadLine());
 int fattoriale = Fattoriale(numeroFattoriale);
 
 Console.WriteLine($"Il Fattoriale di {numeroFattoriale} è: {fattoriale}");
+
+// FIBONACCI
+Console.WriteLine("\n---------------------------\n");
+
+Console.Write("Inserire un numero del quale verra calcolata la successione di fibonacci: ");
+int numeroFibonacci = int.Parse(Console.ReadLine());
+
+int fibonacci = Fibonacci(numeroFibonacci);
+
+Console.WriteLine($"La somma della successione di fibonacci per il numero {numeroFibonacci} è: {fibonacci}");
+
+
 
 
 
