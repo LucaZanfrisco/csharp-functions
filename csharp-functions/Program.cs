@@ -3,7 +3,7 @@
 // FUNZIONI
 
 /* 
- * void StampaArray(int[] array): che preso un array di numeri interi, 
+ * Preso un array di numeri interi, 
  * stampa a video il contenuto dell’array in questa forma “[elemento 1, elemento 2, elemento 3, ...]”. 
 */
 void StampaArray(int[] array)
@@ -19,10 +19,29 @@ void StampaArray(int[] array)
 }
 
 /*
- * int Quadrato(int numero): che vi restituisca il quadrato del numero passato come parametro.
+ * Restituisca il quadrato del numero passato come parametro.
 */
 
 int Quadrato(int numero)
 {
     return numero *= numero;
 }
+
+/*
+ * Preso un array di numeri interi, 
+ * restituisca un nuovo array con tutti gli elementi elevati quadrato. 
+ * Attenzione: è importante restituire un nuovo array, e non modificare l’array come parametro della funzione!
+*/
+int[] ElevaArrayAlQuadrato(int[] array)
+{
+    int[] copiaArray = (int[])array.Clone();
+
+    for (int i = 0; i < copiaArray.Length; i++)
+    {
+        copiaArray[i] *= copiaArray[i];
+    }
+
+    return copiaArray;
+}
+
+
