@@ -44,4 +44,16 @@ int[] ElevaArrayAlQuadrato(int[] array)
     return copiaArray;
 }
 
+/*
+ * Preso un array di numeri interi, restituisca la somma totale di tutti gli elementi dell’array.
+*/
 
+int SommaElementiArray(int[] array)
+{
+    int sommaElementiArray = 0;
+    for (int i = 0;i < array.Length; i++)
+    {
+        sommaElementiArray += array[i];
+    }
+    return sommaElementiArray;
+}
